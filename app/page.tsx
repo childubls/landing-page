@@ -1,6 +1,4 @@
-"use client";
-
-import { FormEvent, useState } from "react";
+const NAVER_FORM_URL = "https://naver.me/GeUagyre";
 
 const worries = [
   ["01", "진도는 나가는데, 실력이 쌓이는지 모르겠어요", "아이의 현재 수준을 확인하지 않은 채 교재와 진도만 바뀌면 이해하지 못한 내용이 쌓일 수 있습니다."],
@@ -25,9 +23,6 @@ const faqs = [
 ];
 
 export default function Home() {
-  const [sent, setSent] = useState(false);
-  function submit(e: FormEvent<HTMLFormElement>) { e.preventDefault(); setSent(true); }
-
   return (
     <main id="top">
       <header className="nav shell">
@@ -35,7 +30,7 @@ export default function Home() {
         <nav aria-label="주요 메뉴">
           <a href="#difference">수업 방식</a><a href="#growth">성장 과정</a><a href="#faq">FAQ</a>
         </nav>
-        <a className="navCta" href="#consult">상담 신청</a>
+        <a className="navCta" href={NAVER_FORM_URL} target="_blank" rel="noopener noreferrer">상담 신청</a>
       </header>
 
       <section className="hero shell">
@@ -43,7 +38,7 @@ export default function Home() {
           <p className="eyebrow">CHILDU BEOMEO · ELEMENTARY ENGLISH</p>
           <h1><span className="headlineLine headlineDark">영어를 잘하는 아이보다 먼저,</span><span className="headlineLine">영어를 두려워하지 않는 아이로.</span></h1>
           <p className="lead">우리 아이에게 맞는 시작점을 찾고, 미국 교과서와 영어 원서로 초등 기초부터 중등 준비까지 차근차근 연결합니다.</p>
-          <div className="actions"><a className="primary" href="#consult">우리 아이 시작점 찾기 <span>↗</span></a><a className="textLink" href="#difference">어떻게 배우나요? →</a></div>
+          <div className="actions"><a className="primary" href={NAVER_FORM_URL} target="_blank" rel="noopener noreferrer">우리 아이 시작점 찾기 <span>↗</span></a><a className="textLink" href="#difference">어떻게 배우나요? →</a></div>
           <div className="proof"><span><b>5명</b> 집중형 그룹수업</span><span><b>6영역</b> 통합 영어학습</span><span><b>3단계</b> 안심 성장 과정</span></div>
         </div>
         <div className="editorial" aria-label="차일드유 학습 방식 미리보기">
@@ -91,12 +86,12 @@ export default function Home() {
       <section id="faq" className="faq shell section"><div className="sectionHead"><p className="eyebrow red">FAQ</p><h2>상담 전, 많이 물어보시는 질문</h2></div><div className="faqList">{faqs.map(([q,a],i)=><details key={q} open={i===0}><summary><span>0{i+1}</span>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
 
       <section id="consult" className="consult section">
-        <div className="shell consultGrid"><div><p className="eyebrow">START WITH A CONVERSATION</p><h2>우리 아이에게 맞는<br/>영어 시작점부터<br/><span>상담에서 확인해보세요.</span></h2><p>현재 학습 경험과 고민을 남겨주시면 확인 후 연락드리겠습니다.</p><div className="miniInfo"><span>대구 수성구 범어동</span><span>초등 전문 영어교육</span></div></div>
-          <form onSubmit={submit}>{sent ? <div className="thanks"><b>상담 신청이 접수되었습니다.</b><p>남겨주신 내용을 확인한 뒤 연락드리겠습니다.</p><button type="button" onClick={()=>setSent(false)}>다시 작성하기</button></div> : <><label>학부모 연락처<input required type="tel" placeholder="010-0000-0000"/></label><div className="split"><label>학생 이름<input required placeholder="학생 이름"/></label><label>학년<select required defaultValue=""><option value="" disabled>학년 선택</option><option>초등 1학년</option><option>초등 2학년</option><option>초등 3학년</option><option>초등 4학년</option><option>초등 5학년</option><option>초등 6학년</option><option>중등 1학년</option><option>중등 2학년</option><option>중등 3학년</option></select></label></div><label>현재 영어 고민<textarea placeholder="현재 학습 경험과 어려워하는 부분을 알려주세요."/></label><label className="agree"><input required type="checkbox"/> 상담 연락을 위한 개인정보 수집·이용에 동의합니다.</label><button className="submit" type="submit">상담 신청하기 <span>↗</span></button></>}</form>
+        <div className="shell consultGrid"><div><p className="eyebrow">START WITH A CONVERSATION</p><h2>우리 아이에게 맞는<br/>영어 시작점부터<br/><span>상담에서 확인해보세요.</span></h2><p>네이버 상담 신청서에 현재 학습 경험과 고민을 남겨주시면 확인 후 연락드리겠습니다.</p><div className="miniInfo"><span>대구 수성구 범어동</span><span>초등·중등 영어교육</span></div></div>
+          <div className="naverFormCard"><small>NAVER FORM</small><span className="naverMark">N</span><h3>상담 신청은<br/>네이버 폼에서 진행됩니다.</h3><p>학생 학년과 연락처, 현재 영어 고민을 간단히 작성해 주세요.</p><a href={NAVER_FORM_URL} target="_blank" rel="noopener noreferrer">네이버 폼으로 상담 신청하기 <span>↗</span></a><em>새 창에서 네이버 폼이 열립니다.</em></div>
         </div>
       </section>
       <footer><div className="shell"><a className="brand footerBrand" href="#top"><img src="/child-u-logo.png" alt="ChildU"/><em>범어점</em></a><p>영어를 두려워하지 않고 계속 배우는 아이로.</p><small>© 2026 차일드유 범어점. All rights reserved.</small></div></footer>
-      <a className="mobileCta" href="#consult">우리 아이 시작점 찾기 <span>↗</span></a>
+      <a className="mobileCta" href={NAVER_FORM_URL} target="_blank" rel="noopener noreferrer">우리 아이 시작점 찾기 <span>↗</span></a>
     </main>
   );
 }

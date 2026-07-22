@@ -21,3 +21,12 @@ h1{font-size:44px;line-height:1.18;letter-spacing:-2.8px}
 @media(max-width:1120px){.hero{grid-template-columns:1fr;max-width:760px}.headlineLine{white-space:normal}.editorial{height:560px}}
 @media(max-width:850px){h1{font-size:39px;letter-spacing:-2.2px}.headlineLine{white-space:normal}.photoCopy b{font-size:25px}}
 @media(max-width:520px){h1{font-size:34px;line-height:1.22}.editorial{height:430px}.photoCopy{left:18px;bottom:20px}.photoCopy b{font-size:20px}.quoteCard b{font-size:23px}}
+
+.naverFormCard{position:relative;min-height:430px;background:white;color:var(--ink);padding:42px;box-shadow:12px 12px 0 var(--blue);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;overflow:hidden}
+.naverFormCard small{font-size:11px;letter-spacing:2px;font-weight:900;color:#03c75a}
+.naverMark{position:absolute;right:-18px;top:-24px;font-weight:950;font-size:170px;line-height:1;color:#03c75a;opacity:.09}
+.naverFormCard h3{position:relative;font-size:30px;line-height:1.24;letter-spacing:-1.5px;margin:28px 0 14px}
+.naverFormCard p{position:relative;color:var(--muted);line-height:1.7;margin:0 0 28px;max-width:380px}
+.naverFormCard>a{position:relative;width:100%;display:flex;justify-content:space-between;align-items:center;background:#03c75a;color:white;padding:19px 22px;font-weight:900}
+.naverFormCard em{font-style:normal;font-size:11px;color:#8a939e;margin-top:12px}
+@media(max-width:520px){.naverFormCard{min-height:380px;padding:28px;box-shadow:7px 7px 0 var(--blue)}.naverFormCard h3{font-size:26px}}
