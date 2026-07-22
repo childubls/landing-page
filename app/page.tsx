@@ -41,13 +41,13 @@ export default function Home() {
       <section className="hero shell">
         <div className="heroCopy">
           <p className="eyebrow">CHILDU BEOMEO · ELEMENTARY ENGLISH</p>
-          <h1>영어를 잘하는 아이보다 먼저,<br/><span>영어를 두려워하지 않는 아이로.</span></h1>
+          <h1><span className="headlineLine headlineDark">영어를 잘하는 아이보다 먼저,</span><span className="headlineLine">영어를 두려워하지 않는 아이로.</span></h1>
           <p className="lead">우리 아이에게 맞는 시작점을 찾고, 미국 교과서와 영어 원서로 초등 기초부터 중등 준비까지 차근차근 연결합니다.</p>
           <div className="actions"><a className="primary" href="#consult">우리 아이 시작점 찾기 <span>↗</span></a><a className="textLink" href="#difference">어떻게 배우나요? →</a></div>
           <div className="proof"><span><b>5명</b> 집중형 그룹수업</span><span><b>6영역</b> 통합 영어학습</span><span><b>3단계</b> 안심 성장 과정</span></div>
         </div>
         <div className="editorial" aria-label="차일드유 학습 방식 미리보기">
-          <div className="photoCard"><div className="sun"/><div className="student"><span>READ</span><b>THINK</b><em>SPEAK</em></div><p>영어를 읽고<br/>생각하고<br/>표현하는 시간</p></div>
+          <div className="photoCard"><img src="/childu-student-hero.png" alt="영어 수업에 참여하는 학생"/><div className="photoShade"/><div className="photoCopy"><small>LEARN · THINK · EXPRESS</small><b>영어를 읽고<br/>생각하고<br/>표현합니다.</b><span>READ · THINK · SPEAK</span></div></div>
           <div className="quoteCard"><img className="cardLogo" src="/child-u-logo.png" alt="ChildU"/><small>OUR PHILOSOPHY</small><b>빠르게보다<br/>바르게.</b><span>아이의 속도에 맞춘 성장</span></div>
           <div className="bookCard"><i>AMERICAN<br/>TEXTBOOK</i><i>BOOK<br/>REPORT</i><i>MY<br/>STORY</i></div>
           <div className="statCard"><b>1:5</b><span>서로 배우고<br/>세심하게 살피는 수업</span></div>
@@ -92,7 +92,7 @@ export default function Home() {
 
       <section id="consult" className="consult section">
         <div className="shell consultGrid"><div><p className="eyebrow">START WITH A CONVERSATION</p><h2>우리 아이에게 맞는<br/>영어 시작점부터<br/><span>상담에서 확인해보세요.</span></h2><p>현재 학습 경험과 고민을 남겨주시면 확인 후 연락드리겠습니다.</p><div className="miniInfo"><span>대구 수성구 범어동</span><span>초등 전문 영어교육</span></div></div>
-          <form onSubmit={submit}>{sent ? <div className="thanks"><b>상담 신청이 접수되었습니다.</b><p>남겨주신 내용을 확인한 뒤 연락드리겠습니다.</p><button type="button" onClick={()=>setSent(false)}>다시 작성하기</button></div> : <><label>학부모 연락처<input required type="tel" placeholder="010-0000-0000"/></label><div className="split"><label>학생 이름<input required placeholder="학생 이름"/></label><label>학년<select required defaultValue=""><option value="" disabled>학년 선택</option><option>초등 1학년</option><option>초등 2학년</option><option>초등 3학년</option><option>초등 4학년</option><option>초등 5학년</option><option>초등 6학년</option></select></label></div><label>현재 영어 고민<textarea placeholder="현재 학습 경험과 어려워하는 부분을 알려주세요."/></label><label className="agree"><input required type="checkbox"/> 상담 연락을 위한 개인정보 수집·이용에 동의합니다.</label><button className="submit" type="submit">상담 신청하기 <span>↗</span></button></>}</form>
+          <form onSubmit={submit}>{sent ? <div className="thanks"><b>상담 신청이 접수되었습니다.</b><p>남겨주신 내용을 확인한 뒤 연락드리겠습니다.</p><button type="button" onClick={()=>setSent(false)}>다시 작성하기</button></div> : <><label>학부모 연락처<input required type="tel" placeholder="010-0000-0000"/></label><div className="split"><label>학생 이름<input required placeholder="학생 이름"/></label><label>학년<select required defaultValue=""><option value="" disabled>학년 선택</option><option>초등 1학년</option><option>초등 2학년</option><option>초등 3학년</option><option>초등 4학년</option><option>초등 5학년</option><option>초등 6학년</option><option>중등 1학년</option><option>중등 2학년</option><option>중등 3학년</option></select></label></div><label>현재 영어 고민<textarea placeholder="현재 학습 경험과 어려워하는 부분을 알려주세요."/></label><label className="agree"><input required type="checkbox"/> 상담 연락을 위한 개인정보 수집·이용에 동의합니다.</label><button className="submit" type="submit">상담 신청하기 <span>↗</span></button></>}</form>
         </div>
       </section>
       <footer><div className="shell"><a className="brand footerBrand" href="#top"><img src="/child-u-logo.png" alt="ChildU"/><em>범어점</em></a><p>영어를 두려워하지 않고 계속 배우는 아이로.</p><small>© 2026 차일드유 범어점. All rights reserved.</small></div></footer>
